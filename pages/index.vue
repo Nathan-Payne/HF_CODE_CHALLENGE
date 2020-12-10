@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TxoLogo from '~/components/logos/txo-logo'
+import TxoLogo from '~/components/logos/txo-logo-2'
 
 export default {
   components: {
@@ -20,4 +20,7 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.container {
+}
+</style>
