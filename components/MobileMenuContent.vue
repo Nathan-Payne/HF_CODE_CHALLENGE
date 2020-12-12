@@ -3,11 +3,11 @@
     <section class="menu-content__enquiries">
       <h6>ENQUIRIES</h6>
 
-      <p>General</p>
+      <p class="menu-content__enquiries--subtitle">General</p>
       <p>+44 (0) 020 3613 4733</p>
       <p><a href="mailto:info@txowork.com">Info@txowork.com</a></p>
 
-      <p>Sales</p>
+      <p class="menu-content__enquiries--subtitle menu-spacer">Sales</p>
       <p>+44 (0) 020 3613 4733</p>
       <p><a href="mailto:info@txowork.com">Info@txowork.com</a></p>
     </section>
@@ -36,15 +36,21 @@ export default {}
 .menu-content {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100px;
-  left: 0px;
+  position: fixed;
+  top: 75px;
+  left: -3px;
   bottom: 0;
   right: 0px;
-  z-index: 100;
+  z-index: 10;
   background-color: $floral-white;
-  padding: 100px 13px;
-  @include font-standard-sm;
+  padding: 100px 24px;
+  font-size: 25px;
+  letter-spacing: -0.6px;
+  line-height: 28px;
+
+  .menu-spacer {
+    padding-top: 35px;
+  }
 
   section {
     padding: 20px 0;
@@ -52,6 +58,7 @@ export default {}
     h6 {
       font-weight: 300;
       letter-spacing: -0.9px;
+      padding-bottom: 14px;
     }
     a {
       color: $umber;
@@ -61,6 +68,7 @@ export default {}
 
   &__enquiries {
     border-top: 2px solid $umber;
+    margin-bottom: 6px;
   }
 
   &__address {

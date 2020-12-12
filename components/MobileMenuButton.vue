@@ -1,5 +1,5 @@
 <template>
-  <button class="mobile-menu" @click="$emit('toggle')">
+  <button class="mobile-menu" @click="buttonClick">
     <div class="mobile-menu__line"></div>
     <div class="mobile-menu__line menu-line--center"></div>
     <div class="mobile-menu__line"></div>
@@ -7,13 +7,20 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    buttonClick() {
+      this.$emit('buttonClick')
+    },
+  },
+}
 </script>
 
 <style lang="scss">
 .mobile-menu {
-  height: 32px;
-  margin-right: 10px;
+  height: 36px;
+  margin-right: 33px;
+  margin-top: -8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +35,7 @@ export default {}
 
   &__line {
     height: 1px;
-    width: 44px;
+    width: 46px;
     background-color: $umber;
   }
 }

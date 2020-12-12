@@ -19,12 +19,14 @@
 }
 
 // Provided font styles - don't seem to agree with design files
+// Hero text / Form inputs
 @mixin font-hero-sm {
   font-size: 72px;
   line-height: 69px;
   letter-spacing: -0.05em;
   word-spacing: 4px;
 }
+// Introduction / Annotations / Submit button / Navigation
 // @mixin font-standard-sm {
 //   font-size: 18px;
 //   line-height: 19px;

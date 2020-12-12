@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <HeaderLanding />
+    <HeaderLanding @toggleMenu="toggleMenu" />
+    <MobileMenuContent v-if="showMenu" />
     <ImageSlider />
     <Newsletter />
 
@@ -13,6 +14,7 @@ import ImageSlider from '~/components/ImageSlider'
 import HeaderLanding from '~/components/HeaderLanding'
 import SiteFooter from '~/components/SiteFooter'
 import Newsletter from '~/components/Newsletter'
+import MobileMenuContent from '~/components/MobileMenuContent'
 
 export default {
   components: {
@@ -20,6 +22,17 @@ export default {
     HeaderLanding,
     SiteFooter,
     Newsletter,
+    MobileMenuContent,
+  },
+  data() {
+    return {
+      showMenu: false,
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu
+    },
   },
 }
 </script>

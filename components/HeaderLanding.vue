@@ -2,10 +2,8 @@
   <header class="header">
     <nav class="header__nav">
       <TxoLogo class="header__nav-logo" />
-      <MobileMenuButton @toggle="toggleMenu" />
+      <MobileMenuButton @buttonClick="menuClicked" />
     </nav>
-
-    <MobileMenuContent v-if="showMenu" />
 
     <div class="header__feature-text">
       <h1>
@@ -30,22 +28,15 @@
 <script>
 import TxoLogo from '~/components/logos/txo-logo-2'
 import MobileMenuButton from '~/components/MobileMenuButton'
-import MobileMenuContent from '~/components/MobileMenuContent'
 
 export default {
   components: {
     TxoLogo,
     MobileMenuButton,
-    MobileMenuContent,
-  },
-  data() {
-    return {
-      showMenu: false,
-    }
   },
   methods: {
-    toggleMenu() {
-      this.showMenu = !this.showMenu
+    menuClicked() {
+      this.$emit('toggleMenu')
     },
   },
 }
@@ -65,22 +56,29 @@ export default {
 
 // Page Sections
 .header {
-  position: relative;
-
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    margin: 0 13px;
+    background: $floral-white;
+    z-index: 20;
 
     &-logo {
       width: 117px;
       height: 68px;
       margin-left: 8px;
+      margin-top: -8px;
     }
   }
 
   &__feature-text {
-    margin-top: 79px;
+    margin-top: 160px;
     margin-left: 7px;
     h1 {
       @include font-hero-sm;
