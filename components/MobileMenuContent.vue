@@ -5,7 +5,7 @@
 
       <p class="menu-content__enquiries--subtitle">General</p>
       <p>+44 (0) 020 3613 4733</p>
-      <p><a href="mailto:info@txowork.com">Info@txowork.com</a></p>
+      <p><a href="mailto:info@txowork.com">Info@txwork.com</a></p>
 
       <p class="menu-content__enquiries--subtitle menu-spacer">Sales</p>
       <p>+44 (0) 020 3613 4733</p>

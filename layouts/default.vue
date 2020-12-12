@@ -30,7 +30,7 @@ a {
 .app {
   color: $umber;
   background-color: $floral-white;
-  margin: 13px 13px 0 13px;
+  margin: 13px 13px 13px 13px;
 
   font-family: 'MessinaSansWeb';
   // font-weight: 400;

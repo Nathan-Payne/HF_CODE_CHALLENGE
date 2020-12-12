@@ -14,10 +14,12 @@ export default {}
 
 <style lang="scss">
 .slider {
-  margin-top: 106px;
+  margin-top: 99px;
 
   &__img {
     width: 100%;
+    height: 340px;
+    padding-left: 8px;
   }
 }
 </style>

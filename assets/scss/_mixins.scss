@@ -1,12 +1,6 @@
 // Typography Styles
 
 // 'mobile' sizings - Working styles to match design @ 558px width
-// @mixin font-hero-sm {
-//   font-size: 66px; // quoted 72px, 69px, -0.05em
-//   line-height: 63px;
-//   letter-spacing: -0.07em;
-//   word-spacing: 4px;
-// }
 @mixin font-standard-sm {
   font-size: 24px; // quoted 18px, 19px, 0em
   line-height: 27.3px;
