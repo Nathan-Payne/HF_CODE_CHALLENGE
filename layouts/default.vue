@@ -7,9 +7,9 @@
 <style lang="scss">
 // RESET/BASE CSS Styles
 html {
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  // word-spacing: 4px;
+  // -ms-text-size-adjust: 100%;
+  // -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
 
   background-color: $floral-white;
@@ -30,13 +30,11 @@ a {
 .app {
   color: $umber;
   background-color: $floral-white;
-  margin: 13px;
+  margin: 13px 13px 0 13px;
 
   font-family: 'MessinaSansWeb';
-  font-weight: 400;
-  font-style: normal;
-  font-size: 4vh;
-  line-height: 1.1;
+  // font-weight: 400;
+  // font-style: normal;
 
   text-rendering: optimizeLegibility; /* emphasizes in legibility over rendering speed */
   -webkit-font-smoothing: antialiased; /* apply font anti-aliasing */

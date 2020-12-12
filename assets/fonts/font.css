@@ -2,14 +2,16 @@
 @font-face {
   font-family: 'MessinaSansWeb';
   src: local('MessinaSansWeb'), local('MessinaSansWeb-Regular'),
-    url('MessinaSansWeb-Regular.eot'); /* IE9 Compat Modes */
+    url('~assets/fonts/MessinaSansWeb-Regular.eot'); /* IE9 Compat Modes */
   src: local('MessinaSansWeb'), local('MessinaSansWeb-Regular'),
-    url('MessinaSansWeb-Regular.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('MessinaSansWeb-Regular.woff') format('woff'),
-    /* Pretty Modern Browsers */ url(MessinaSansWeb-Regular.woff2)
+    url('~assets/fonts/MessinaSansWeb-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('~assets/fonts/MessinaSansWeb-Regular.woff')
+      format('woff'),
+    /* Pretty Modern Browsers */ url(~assets/fonts/MessinaSansWeb-Regular.woff2)
       format('woff2'); /* Super Modern Browsers */
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300 400 600;
   font-stretch: normal;
   unicode-range: U+000D-FB04;
 }

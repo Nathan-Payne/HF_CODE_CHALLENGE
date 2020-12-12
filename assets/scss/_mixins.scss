@@ -1,5 +1,59 @@
-// Media Queries
+// Typography Styles
 
+// 'mobile' sizings - Working styles to match design @ 558px width
+// @mixin font-hero-sm {
+//   font-size: 66px; // quoted 72px, 69px, -0.05em
+//   line-height: 63px;
+//   letter-spacing: -0.07em;
+//   word-spacing: 4px;
+// }
+@mixin font-standard-sm {
+  font-size: 24px; // quoted 18px, 19px, 0em
+  line-height: 27.3px;
+  letter-spacing: -0.4px;
+}
+@mixin font-footer-sm {
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.045em;
+}
+
+// Provided font styles - don't seem to agree with design files
+@mixin font-hero-sm {
+  font-size: 72px;
+  line-height: 69px;
+  letter-spacing: -0.05em;
+  word-spacing: 4px;
+}
+// @mixin font-standard-sm {
+//   font-size: 18px;
+//   line-height: 19px;
+//   letter-spacing: 0em;
+// }
+// @mixin font-footer-sm {
+//   font-size: 10px;
+//   line-height: 10px;
+//   letter-spacing: -0.045em;
+// }
+
+// 'desktop' sizings
+@mixin font-hero-lg {
+  font-size: 144px;
+  line-height: 138px;
+  letter-spacing: -0.05em;
+}
+@mixin font-standard-lg {
+  font-size: 45px;
+  line-height: 45px;
+  letter-spacing: 0em;
+}
+@mixin font-footer-lg {
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.045em;
+}
+
+// Media Queries
 @mixin sm {
   @media (min-width: #{$sm}) {
     @content;
