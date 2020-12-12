@@ -29,6 +29,10 @@ export default {
   border: none;
   background-color: inherit;
 
+  @include lg {
+    display: none;
+  }
+
   &:focus {
     outline: none;
   }

@@ -3,6 +3,7 @@
     <nav class="header__nav">
       <TxoLogo class="header__nav-logo" />
       <MobileMenuButton @buttonClick="menuClicked" />
+      <!-- <NavContentLg /> -->
     </nav>
 
     <div class="header__feature-text">
@@ -28,11 +29,13 @@
 <script>
 import TxoLogo from '~/components/logos/txo-logo-2'
 import MobileMenuButton from '~/components/MobileMenuButton'
+// import NavContentLg from '~/components/NavContentLg'
 
 export default {
   components: {
     TxoLogo,
     MobileMenuButton,
+    // NavContentLg,
   },
   methods: {
     menuClicked() {
@@ -69,21 +72,45 @@ export default {
     background: $floral-white;
     z-index: 20;
 
+    @include lg {
+      margin: 0px 40px 0px 40px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      height: auto;
+    }
+
     &-logo {
       width: 117px;
       height: 68px;
       margin-left: 8px;
       margin-top: -8px;
+
+      @include lg {
+        width: 166px;
+        height: 74px;
+        margin-left: 0px;
+        margin-top: 0px;
+      }
     }
   }
 
   &__feature-text {
     margin-top: 160px;
     margin-left: 7px;
+
+    @include lg {
+      margin-top: 249px;
+      margin-left: 0px;
+    }
     h1 {
       @include font-hero-sm;
       font-weight: 400;
       letter-spacing: -4.9px;
+
+      @include lg {
+        @include font-hero-lg;
+        letter-spacing: -10.1px;
+      }
     }
   }
 
@@ -92,10 +119,24 @@ export default {
     margin-left: 7px;
     @include font-standard-sm;
 
+    @include lg {
+      width: 880px;
+      margin-top: 110px;
+      margin-left: 695px;
+      @include font-standard-lg;
+      letter-spacing: -2.7px;
+    }
+
     h6 {
       margin-bottom: 5px;
       font-weight: 300;
       letter-spacing: -0.9px;
+
+      @include lg {
+        @include font-footer-lg;
+        font-size: 21px;
+        margin-bottom: 19px;
+      }
     }
   }
 }

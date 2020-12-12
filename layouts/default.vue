@@ -7,13 +7,10 @@
 <style lang="scss">
 // RESET/BASE CSS Styles
 html {
-  // word-spacing: 4px;
-  // -ms-text-size-adjust: 100%;
-  // -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-
   background-color: $floral-white;
 }
+
 *,
 *::before,
 *::after {
@@ -31,6 +28,9 @@ a {
   color: $umber;
   background-color: $floral-white;
   margin: 13px 13px 13px 13px;
+  @include lg {
+    margin: 40px;
+  }
 
   font-family: 'MessinaSansWeb';
   // font-weight: 400;

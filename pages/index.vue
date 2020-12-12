@@ -27,11 +27,28 @@ export default {
   data() {
     return {
       showMenu: false,
+      windowWidth: null,
     }
+  },
+  computed: {
+    showMobileMenuContent() {
+      return this.windowWidth >= 1024
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu
+    },
+    onResize() {
+      this.windowWidth = window.innerWidth
     },
   },
 }
