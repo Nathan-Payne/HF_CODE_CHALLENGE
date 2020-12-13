@@ -29,7 +29,7 @@ a {
   background-color: $floral-white;
   margin: 13px 13px 13px 13px;
   @include lg {
-    margin: 40px;
+    margin: 40px 40px 0px 40px;
   }
 
   font-family: 'MessinaSansWeb';

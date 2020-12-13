@@ -12,10 +12,13 @@ $lg: 1024px;
 $xl: 1400px;
 $xxl: 1900px;
 
-// DESKTOP
-// 760px padding from logo to nav-info-group
-// 184px right padding for nav-info group
-
 //TODOs
 // extract css nuxt config
 // span around main title element to set letter spacing?
+// newsletter padding + negative margin to show placeholder overflow-y
+// adjust spacing to prevent overflows
+
+// Questions on behaviour
+// Image sizing outside breakpoints - stretch + maintain guttering or maintain aspect ratio
+// "STAY UPDATED" in bottom left corner - scroll link? fade out?
+//

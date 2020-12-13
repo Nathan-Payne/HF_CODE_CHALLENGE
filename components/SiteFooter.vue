@@ -37,14 +37,32 @@ export default {
   width: 100%;
   margin-top: 100px;
 
+  @include lg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 180px;
+  }
+
   &__row {
     display: block;
     margin-left: 8px;
+
+    @include lg {
+      display: inline-block;
+      flex: 1;
+    }
   }
 
   &__nav {
     padding-top: 40px;
     padding-bottom: 20px;
+
+    @include lg {
+      display: inline-block;
+      padding-top: 0px;
+      flex: 1;
+    }
   }
 
   &__nav ul {
@@ -53,6 +71,10 @@ export default {
     padding-left: 10px;
     padding-right: 40px;
     @include font-footer-sm;
+
+    @include lg {
+      @include font-footer-lg;
+    }
 
     li {
       list-style: none;

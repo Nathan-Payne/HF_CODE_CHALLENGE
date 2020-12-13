@@ -43,6 +43,11 @@
     letter-spacing: -0.9px;
     line-height: 27.3px;
     margin-left: 4px;
+
+    @include lg {
+      @include font-standard-lg;
+      font-size: 30px;
+    }
   }
 
   &__title {
@@ -50,6 +55,11 @@
     letter-spacing: -0.06em;
     font-weight: 400;
     padding-top: 4px;
+
+    @include lg {
+      @include font-hero-lg;
+      margin-left: -4px;
+    }
   }
 
   &__form form {
@@ -57,12 +67,19 @@
     flex-direction: column;
     justify-content: space-around;
 
+    @include lg {
+      margin-left: -4px;
+    }
+
     input {
       @include font-hero-sm;
       font-weight: 400;
       background-color: $floral-white;
       border: none;
       color: $umber;
+      @include lg {
+        @include font-hero-lg;
+      }
 
       &::placeholder {
         color: $timberwolf;
@@ -87,6 +104,10 @@
       padding-bottom: 20px;
       padding-left: 7px;
       cursor: pointer;
+
+      @include lg {
+        @include font-standard-lg;
+      }
 
       &:hover {
         opacity: 0.3;

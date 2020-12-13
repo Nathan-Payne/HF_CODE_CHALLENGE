@@ -2,7 +2,13 @@
   <div class="container">
     <HeaderLanding @toggleMenu="toggleMenu" />
     <MobileMenuContent v-if="showMenu" />
-    <ImageSlider />
+    <div class="slider__container">
+      <ImageSlider
+        v-for="image in imageDetail"
+        :key="image.name"
+        :image-detail="image"
+      />
+    </div>
     <Newsletter />
 
     <SiteFooter />
@@ -28,6 +34,26 @@ export default {
     return {
       showMenu: false,
       windowWidth: null,
+      imageDetail: [
+        {
+          name: 'Sample Title',
+          availability: '[Now]',
+          location: '[Soho]',
+          size: '[4,200] sqft',
+          description:
+            'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
+          src: 'carousel_image.jpg',
+        },
+        {
+          name: 'Another Sample Title',
+          availability: '[Soon]',
+          location: '[Hawaii]',
+          size: '[1,200] sqft',
+          description:
+            'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
+          src: 'carousel_image.jpg',
+        },
+      ],
     }
   },
   computed: {
@@ -54,4 +80,10 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.slider__container {
+  display: flex;
+  max-width: 100vw;
+  overflow: hidden;
+}
+</style>
