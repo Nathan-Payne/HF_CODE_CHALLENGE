@@ -3,7 +3,7 @@
     <nav class="header__nav">
       <TxoLogo class="header__nav-logo" />
       <MobileMenuButton @buttonClick="menuClicked" />
-      <!-- <NavContentLg /> -->
+      <NavContentLg />
     </nav>
 
     <div class="header__feature-text">
@@ -29,13 +29,13 @@
 <script>
 import TxoLogo from '~/components/logos/txo-logo-2'
 import MobileMenuButton from '~/components/MobileMenuButton'
-// import NavContentLg from '~/components/NavContentLg'
+import NavContentLg from '~/components/NavContentLg'
 
 export default {
   components: {
     TxoLogo,
     MobileMenuButton,
-    // NavContentLg,
+    NavContentLg,
   },
   methods: {
     menuClicked() {

@@ -3,11 +3,11 @@
     <section class="menu-content__enquiries">
       <h6>ENQUIRIES</h6>
 
-      <p class="menu-content__enquiries--subtitle">General</p>
+      <p class="menu-content__subtitle">General</p>
       <p>+44 (0) 020 3613 4733</p>
       <p><a href="mailto:info@txowork.com">Info@txwork.com</a></p>
 
-      <p class="menu-content__enquiries--subtitle menu-spacer">Sales</p>
+      <p class="menu-content__subtitle menu-spacer">Sales</p>
       <p>+44 (0) 020 3613 4733</p>
       <p><a href="mailto:info@txowork.com">Info@txowork.com</a></p>
     </section>
@@ -32,7 +32,7 @@
 export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scooped>
 .menu-content {
   display: flex;
   flex-direction: column;
@@ -47,6 +47,10 @@ export default {}
   font-size: 25px;
   letter-spacing: -0.6px;
   line-height: 28px;
+
+  @include lg {
+    display: none;
+  }
 
   .menu-spacer {
     padding-top: 35px;
