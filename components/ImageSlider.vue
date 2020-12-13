@@ -60,6 +60,7 @@ export default {
   margin-top: 99px;
   max-width: 100vw;
   margin-right: 13px;
+  @include font-standard-sm;
 
   @include lg {
     margin-top: 110px;
@@ -70,7 +71,6 @@ export default {
 
   &__img {
     width: calc(100vw - 26px);
-    padding-left: 8px;
 
     @include lg {
       width: calc(100vw - 80px);
@@ -82,7 +82,14 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 3fr;
-    gap: 22px;
+    grid-row-gap: 0px;
+    grid-column-gap: 15px;
+    align-content: center;
+    align-items: center;
+    padding-top: 5px;
+    @include lg {
+      grid-column-gap: 22px;
+    }
   }
 
   &__name,
@@ -90,11 +97,18 @@ export default {
   &__location,
   &__size {
     border-bottom: 2px solid $umber;
-    padding: 30px 0;
+    padding: 0px 0 20px 0;
+    @include lg {
+      padding: 30px 0;
+    }
   }
 
   &__description {
-    padding: 30px 40px 30px 0px;
+    padding: 10px 20px 20px 0px;
+
+    @include lg {
+      padding: 30px 40px 30px 0px;
+    }
   }
 
   &__button {

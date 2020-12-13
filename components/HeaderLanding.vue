@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <nav class="header__nav">
-      <TxoLogo class="header__nav-logo" />
+      <TxoLogo class="header__nav-logo gsap-logo" />
       <MobileMenuButton @buttonClick="menuClicked" />
       <NavContentLg />
     </nav>
 
-    <div class="header__feature-text">
+    <div class="header__feature-text gsap-feature-text gsap-container">
       <h1>
         We<span class="single-quote-outer"
           ><span class="single-quote-inner">&#8217;</span></span
@@ -15,7 +15,7 @@
       </h1>
     </div>
 
-    <section class="header__description">
+    <section class="header__description gsap-header-description gsap-container">
       <h6>OUR OFFERING</h6>
       <p>
         We provide physical, pragmatic and personal business guidance. Success

@@ -87,9 +87,6 @@ export default {}
       }
     }
 
-    &__subtitle {
-    }
-
     &__address {
       padding-right: 110px;
       h6 {

@@ -2,25 +2,31 @@
   <div class="container">
     <HeaderLanding @toggleMenu="toggleMenu" />
     <MobileMenuContent v-if="showMenu" />
-    <div class="slider__container">
-      <ImageSlider
-        v-for="image in imageDetail"
-        :key="image.name"
-        :image-detail="image"
-      />
-    </div>
-    <Newsletter />
+    <div class="gsap-container">
+      <div class="slider__container">
+        <ImageSlider
+          v-for="image in imageDetail"
+          :key="image.name"
+          :image-detail="image"
+        />
+      </div>
+      <Newsletter />
 
-    <SiteFooter />
+      <SiteFooter />
+    </div>
   </div>
 </template>
 
 <script>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ImageSlider from '~/components/ImageSlider'
 import HeaderLanding from '~/components/HeaderLanding'
 import SiteFooter from '~/components/SiteFooter'
 import Newsletter from '~/components/Newsletter'
 import MobileMenuContent from '~/components/MobileMenuContent'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
@@ -64,6 +70,32 @@ export default {
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
+    })
+
+    gsap.from('.gsap-logo', {
+      scrollTrigger: {
+        trigger: '.header__nav',
+        scrub: true,
+        pin: '.gsap-container:not(.gsap-logo)',
+        pinSpacing: true,
+        start: 'top top',
+        end: '+=1000',
+      },
+      x: '23vw',
+      y: '83vh',
+      scale: 3,
+    })
+
+    gsap.from('.gsap-feature-text', {
+      scrollTrigger: {
+        trigger: '.gsap-logo',
+        // markers: true,
+        scrub: true,
+        start: 'top 30%',
+        end: '+=350',
+      },
+      autoAlpha: 0,
+      y: '40vh',
     })
   },
   beforeDestroy() {
