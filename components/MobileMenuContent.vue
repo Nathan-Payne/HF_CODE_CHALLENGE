@@ -29,7 +29,17 @@
 </template>
 
 <script>
-export default {}
+import { gsap } from 'gsap'
+export default {
+  mounted() {
+    gsap.from('.menu-content', {
+      autoAlpha: 0,
+      delay: 0.1,
+      duration: 0.25,
+      ease: 'power2.out',
+    })
+  },
+}
 </script>
 
 <style lang="scss" scooped>

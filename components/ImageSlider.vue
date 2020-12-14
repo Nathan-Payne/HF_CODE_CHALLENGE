@@ -1,6 +1,6 @@
 <template>
   <section class="slider">
-    <div class="slider__img-wrapper">
+    <div class="slider__img-wrapper" @click="$emit('slideImage')">
       <img
         :src="getURL(imageDetail.src)"
         :alt="imageDetail.name"
@@ -113,6 +113,10 @@ export default {
     margin-right: 40px;
     @include font-standard-lg;
     letter-spacing: -2.6px;
+  }
+
+  &__img-wrapper {
+    cursor: pointer;
   }
 
   &__img {

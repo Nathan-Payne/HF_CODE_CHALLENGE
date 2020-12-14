@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <HeaderLanding @toggleMenu="toggleMenu" />
+    <HeaderLanding :show-menu="showMenu" @toggleMenu="toggleMenu" />
     <MobileMenuContent v-if="showMenu" />
     <div class="gsap-container">
       <div class="slider__container">
@@ -9,6 +9,7 @@
           :key="index"
           :image-detail="image"
           :image-size="windowSize"
+          @slideImage="slideImages(index)"
         />
       </div>
       <Newsletter />
@@ -41,6 +42,7 @@ export default {
     return {
       showMenu: false,
       windowWidth: 0,
+      imageCount: 0,
       imageDetail: [
         {
           name: 'Sample Title',
@@ -53,6 +55,15 @@ export default {
         },
         {
           name: 'Another Sample Title',
+          availability: '[Soon]',
+          location: '[Hawaii]',
+          size: '[1,200] sqft',
+          description:
+            'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
+          src: 'carousel_image.jpg',
+        },
+        {
+          name: 'Third Sample Title',
           availability: '[Soon]',
           location: '[Hawaii]',
           size: '[1,200] sqft',
@@ -114,6 +125,19 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
+    slideImages() {
+      if (this.imageCount > 1) {
+        gsap.to('.slider', {
+          x: 0,
+        })
+        this.imageCount = 0
+      } else {
+        gsap.to('.slider', {
+          x: () => `${-98 * this.imageCount}vw`,
+        })
+        this.imageCount++
+      }
+    },
     toggleMenu() {
       this.showMenu = !this.showMenu
     },

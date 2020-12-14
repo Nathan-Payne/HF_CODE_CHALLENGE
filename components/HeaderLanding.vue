@@ -2,7 +2,7 @@
   <header class="header">
     <nav class="header__nav">
       <TxoLogo class="header__nav-logo gsap-logo" />
-      <MobileMenuButton @buttonClick="menuClicked" />
+      <MobileMenuButton :show-menu="showMenu" @buttonClick="menuClicked" />
       <NavContentLg />
     </nav>
 
@@ -36,6 +36,12 @@ export default {
     TxoLogo,
     MobileMenuButton,
     NavContentLg,
+  },
+  props: {
+    showMenu: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     menuClicked() {
