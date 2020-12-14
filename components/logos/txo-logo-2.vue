@@ -8,12 +8,13 @@
     width="684px"
     height="303.5px"
     viewBox="0 0 684 303.5"
-    style="overflow: visible; enable-background: new 0 0 684 303.5"
+    style="overflow: visible; enable-background: new 0 0 684 303.5; #726356"
     xml:space="preserve"
+    class="fill-logo"
   >
     <style type="text/css">
       .st0 {
-        fill: #736357;
+        fill: #726356;
       }
     </style>
     <defs></defs>
@@ -37,4 +38,8 @@
   </svg>
 </template>
 
-<style></style>
+<style lang="scss">
+.fill-logo {
+  fill: $umber;
+}
+</style>
