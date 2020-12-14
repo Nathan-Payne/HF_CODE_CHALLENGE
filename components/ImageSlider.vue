@@ -8,16 +8,23 @@
       />
     </div>
 
-    <article class="slider__img-detail">
-      <div class="slider__name">Name: {{ imageDetail.name }}</div>
-      <div class="slider__availability">
-        Availability: {{ imageDetail.availability }}
-      </div>
-      <div class="slider__location">Location: {{ imageDetail.location }}</div>
-      <div class="slider__size">Size: {{ imageDetail.size }}</div>
-      <div class="slider__description"></div>
-      <div class="slider__description">{{ imageDetail.description }}</div>
-    </article>
+    <div class="slider__detail-wrapper">
+      <article class="slider__img-detail">
+        <div class="slider__name">Name: {{ imageDetail.name }}</div>
+        <div class="slider__availability">
+          Availability: {{ imageDetail.availability }}
+        </div>
+        <div class="slider__location gsap-img-detail">
+          Location: {{ imageDetail.location }}
+        </div>
+        <div class="slider__size gsap-img-detail">
+          Size: {{ imageDetail.size }}
+        </div>
+        <div class="slider__description gsap-img-detail">
+          {{ imageDetail.description }}
+        </div>
+      </article>
+    </div>
 
     <button class="slider__button" @click="toggleSliderDetail">
       {{ sliderButtonText }}
@@ -26,6 +33,8 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
+
 export default {
   props: {
     imageDetail: {
@@ -50,6 +59,33 @@ export default {
     },
     toggleSliderDetail() {
       this.showDetail = !this.showDetail
+      if (this.showDetail === true) {
+        gsap
+          .timeline({ duration: 0.25, ease: 'power2.out' })
+          .to('.slider__detail-wrapper', {
+            height: 'auto',
+          })
+          .to(
+            '.slider__img-detail',
+            {
+              gridColumnGap: '15px',
+            },
+            '<'
+          )
+      } else {
+        gsap
+          .timeline({ duration: 0.25, ease: 'power2.out' })
+          .to('.slider__detail-wrapper', {
+            height: '50px',
+          })
+          .to(
+            '.slider__img-detail',
+            {
+              gridColumnGap: '0px',
+            },
+            '<'
+          )
+      }
     },
   },
 }
@@ -77,16 +113,20 @@ export default {
     }
   }
 
+  &__detail-wrapper {
+    height: 50px;
+    overflow: hidden;
+  }
+
   &__img-detail {
     border-bottom: 2px solid $umber;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 3fr;
     grid-row-gap: 0px;
-    grid-column-gap: 15px;
+    // grid-column-gap: 15px;
     align-content: center;
     align-items: center;
-    padding-top: 5px;
     @include lg {
       grid-column-gap: 22px;
     }
@@ -97,13 +137,14 @@ export default {
   &__location,
   &__size {
     border-bottom: 2px solid $umber;
-    padding: 0px 0 20px 0;
+    padding: 0px 0 15px 0;
     @include lg {
       padding: 30px 0;
     }
   }
 
   &__description {
+    grid-column: 1 / -1;
     padding: 10px 20px 20px 0px;
 
     @include lg {
@@ -112,13 +153,12 @@ export default {
   }
 
   &__button {
-    background-color: $floral-white;
+    background-color: transparent;
     border: none;
     color: $timberwolf;
     @include font-standard-sm;
-    padding-top: 31px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 7px;
     cursor: pointer;
     outline: none;
 
