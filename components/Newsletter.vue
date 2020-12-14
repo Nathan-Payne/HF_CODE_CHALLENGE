@@ -23,7 +23,7 @@
         <label for="email" aria-label="Email Address"></label>
         <input
           id="email"
-          type="text"
+          type="email"
           name="email"
           placeholder="Email Address"
         />
@@ -77,6 +77,7 @@
       background-color: $floral-white;
       border: none;
       color: $umber;
+
       @include lg {
         @include font-hero-lg;
       }
@@ -84,6 +85,7 @@
       &::placeholder {
         color: $timberwolf;
         overflow: visible;
+        white-space: pre-line;
       }
       &:focus {
         outline: none;
@@ -92,9 +94,11 @@
 
     input:nth-of-type(2) {
       margin-top: -15px;
+      padding-bottom: 10px;
     }
     input:nth-of-type(3) {
-      margin-top: -14px;
+      background-color: transparent;
+      margin-top: -21px;
     }
 
     input[type='submit'] {

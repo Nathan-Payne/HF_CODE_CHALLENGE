@@ -50,6 +50,11 @@
 }
 
 // Media Queries
+@mixin xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
 @mixin sm {
   @media (min-width: #{$sm}) {
     @content;
