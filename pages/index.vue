@@ -136,6 +136,8 @@ export default {
           x: () =>
             this.windowSize >= 644 && this.windowSize < 1024
               ? `${-98.3 * this.imageCount}vw`
+              : this.windowSize >= 1024
+              ? `${-98 * this.imageCount}vw`
               : `${-97 * this.imageCount}vw`,
         })
         this.imageCount++
