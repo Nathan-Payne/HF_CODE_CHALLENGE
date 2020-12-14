@@ -122,9 +122,17 @@ export default {
     @include lg {
       width: 880px;
       margin-top: 110px;
-      margin-left: 695px;
+      margin-left: 150px;
       @include font-standard-lg;
       letter-spacing: -2.7px;
+    }
+
+    @include xl {
+      margin-left: 450px;
+    }
+
+    @include xxl {
+      margin-left: 695px;
     }
 
     h6 {

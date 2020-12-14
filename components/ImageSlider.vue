@@ -41,6 +41,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    imageSize: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {
@@ -61,7 +65,10 @@ export default {
       this.showDetail = !this.showDetail
       if (this.showDetail === true) {
         gsap
-          .timeline({ duration: 0.25, ease: 'power2.out' })
+          .timeline({
+            duration: 0.25,
+            ease: 'power2.out',
+          })
           .to('.slider__detail-wrapper', {
             height: 'auto',
           })
@@ -74,9 +81,12 @@ export default {
           )
       } else {
         gsap
-          .timeline({ duration: 0.25, ease: 'power2.out' })
+          .timeline({
+            duration: 0.25,
+            ease: 'power2.out',
+          })
           .to('.slider__detail-wrapper', {
-            height: '50px',
+            height: () => (this.imageSize >= 1024 ? '120px' : '47px'),
           })
           .to(
             '.slider__img-detail',
@@ -114,8 +124,12 @@ export default {
   }
 
   &__detail-wrapper {
-    height: 50px;
+    height: 47px;
     overflow: hidden;
+
+    @include lg {
+      height: 120px;
+    }
   }
 
   &__img-detail {
@@ -124,7 +138,6 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 3fr;
     grid-row-gap: 0px;
-    // grid-column-gap: 15px;
     align-content: center;
     align-items: center;
     @include lg {

@@ -5,9 +5,10 @@
     <div class="gsap-container">
       <div class="slider__container">
         <ImageSlider
-          v-for="image in imageDetail"
-          :key="image.name"
+          v-for="(image, index) in imageDetail"
+          :key="index"
           :image-detail="image"
+          :image-size="windowSize"
         />
       </div>
       <Newsletter />
@@ -39,7 +40,7 @@ export default {
   data() {
     return {
       showMenu: false,
-      windowWidth: null,
+      windowWidth: 0,
       imageDetail: [
         {
           name: 'Sample Title',
@@ -63,8 +64,8 @@ export default {
     }
   },
   computed: {
-    showMobileMenuContent() {
-      return this.windowWidth >= 1024
+    windowSize() {
+      return this.windowWidth
     },
   },
   mounted() {
@@ -81,9 +82,20 @@ export default {
         start: 'top top',
         end: '+=1000',
       },
-      x: '23vw',
-      y: '83vh',
+      onStart: this.onResize(),
+      x: () => (this.windowSize >= 1024 ? '9vw' : '23vw'),
+      y: () => (this.windowSize >= 1024 ? '76vh' : '83vh'),
       scale: 3,
+    })
+
+    gsap.from('.gsap-fade', {
+      scrollTrigger: {
+        trigger: '.header__nav',
+        scrub: true,
+        start: 'top top',
+        end: '+=1000',
+      },
+      autoAlpha: 0,
     })
 
     gsap.from('.gsap-feature-text', {

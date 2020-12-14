@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-content">
+  <div class="nav-content gsap-fade">
     <section class="nav-content__enquiries">
       <h6>ENQUIRIES</h6>
 
