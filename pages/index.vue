@@ -9,7 +9,7 @@
           :key="index"
           :image-detail="image"
           :image-size="windowSize"
-          @slideImage="slideImages(index)"
+          @slideImage="slideImages()"
         />
       </div>
       <Newsletter />
