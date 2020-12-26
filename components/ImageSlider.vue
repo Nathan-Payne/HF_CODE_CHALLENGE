@@ -105,12 +105,10 @@ export default {
 .slider {
   margin-top: 99px;
   max-width: 100vw;
-  margin-right: 13px;
   @include font-standard-sm;
 
   @include lg {
     margin-top: 110px;
-    margin-right: 40px;
     @include font-standard-lg;
     letter-spacing: -2.6px;
   }

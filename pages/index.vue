@@ -98,17 +98,13 @@ export default {
     slideImages() {
       if (this.imageCount > 1) {
         gsap.to('.slider', {
+          xPercent: 0,
           x: 0,
         })
         this.imageCount = 0
       } else {
         gsap.to('.slider', {
-          x: () =>
-            this.windowSize >= 644 && this.windowSize < 1024
-              ? `${-98.3 * this.imageCount}vw`
-              : this.windowSize >= 1024
-              ? `${-98 * this.imageCount}vw`
-              : `${-97 * this.imageCount}vw`,
+          xPercent: () => -100 * this.imageCount,
         })
         this.imageCount++
       }
