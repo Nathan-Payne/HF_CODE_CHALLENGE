@@ -19,7 +19,7 @@ export function pinnedLandingTimeline() {
     transformOrigin: '0% 50%',
   })
   tl.from('.gsap-logo', {
-    y: '80vh',
+    y: '76vh',
     scale: 2.8,
     duration: 3,
   })
