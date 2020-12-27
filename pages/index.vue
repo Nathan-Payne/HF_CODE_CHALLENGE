@@ -60,6 +60,12 @@ export default {
           description:
             'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
           src: 'carousel_image.jpg',
+          srcset: [
+            ['carousel_image_512.jpg', '512w'],
+            ['carousel_image_767.jpg', '767w'],
+            ['carousel_image_1024.jpg', '1024w'],
+            ['carousel_image_1920.jpg', '1920w'],
+          ],
         },
         {
           name: 'Another Sample Title',
@@ -69,6 +75,12 @@ export default {
           description:
             'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
           src: 'carousel_image.jpg',
+          srcset: [
+            ['carousel_image_512.jpg', '512w'],
+            ['carousel_image_767.jpg', '767w'],
+            ['carousel_image_1024.jpg', '1024w'],
+            ['carousel_image_1920.jpg', '1920w'],
+          ],
         },
         {
           name: 'Third Sample Title',
@@ -78,6 +90,12 @@ export default {
           description:
             'Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit.',
           src: 'carousel_image.jpg',
+          srcset: [
+            ['carousel_image_512.jpg', '512w'],
+            ['carousel_image_767.jpg', '767w'],
+            ['carousel_image_1024.jpg', '1024w'],
+            ['carousel_image_1920.jpg', '1920w'],
+          ],
         },
       ],
     }

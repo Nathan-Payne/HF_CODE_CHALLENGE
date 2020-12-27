@@ -4,6 +4,7 @@
       <img
         :src="getURL(imageDetail.src)"
         :alt="imageDetail.name"
+        :srcset="getSrcsetURL(imageDetail.srcset)"
         class="slider__img"
       />
     </div>
@@ -60,6 +61,12 @@ export default {
   methods: {
     getURL(path) {
       return require(`~/assets/img/${path}`)
+    },
+    getSrcsetURL(srcArray) {
+      return srcArray.reduce((acc, cur) => {
+        const imgPath = require(`~/assets/img/${cur[0]}`)
+        return `${imgPath} ${cur[1]}, ${acc}`
+      }, '')
     },
     toggleSliderDetail() {
       this.showDetail = !this.showDetail
