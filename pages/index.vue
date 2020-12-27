@@ -13,8 +13,10 @@
         v-for="(image, index) in imageDetail"
         :key="index"
         :image-detail="image"
-        :image-size="windowSize"
+        :image-size="windowWidth"
+        :show-img-detail="showImgDetail"
         @slideImage="slideImages()"
+        @toggleSliderDetail="toggleSliderDetail"
       />
     </div>
     <Newsletter />
@@ -49,6 +51,7 @@ export default {
   data() {
     return {
       showMenu: false,
+      showImgDetail: false,
       windowWidth: 0,
       imageCount: 0,
       imageDetail: [
@@ -129,6 +132,9 @@ export default {
     },
     toggleMenu() {
       this.showMenu = !this.showMenu
+    },
+    toggleSliderDetail() {
+      this.showImgDetail = !this.showImgDetail
     },
     onResize() {
       this.windowWidth = window.innerWidth

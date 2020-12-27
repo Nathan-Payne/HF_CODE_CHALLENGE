@@ -46,16 +46,15 @@ export default {
       type: Number,
       default: 0,
     },
-  },
-  data() {
-    return {
-      showDetail: false,
-    }
+    showImgDetail: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
     sliderButtonText() {
-      return this.showDetail === true ? 'Hide Text' : 'Read More'
+      return this.showImgDetail === true ? 'Hide Text' : 'Read More'
     },
   },
   methods: {
@@ -69,8 +68,8 @@ export default {
       }, '')
     },
     toggleSliderDetail() {
-      this.showDetail = !this.showDetail
-      if (this.showDetail === true) {
+      this.$emit('toggleSliderDetail')
+      if (this.showImgDetail === false) {
         gsap
           .timeline({
             duration: 0.25,
@@ -93,7 +92,7 @@ export default {
             ease: 'power2.out',
           })
           .to('.slider__detail-wrapper', {
-            height: () => (this.imageSize >= 1024 ? '120px' : '47px'),
+            height: () => (this.imageSize >= 1024 ? 120 : 47),
           })
           .to(
             '.slider__img-detail',
@@ -133,11 +132,13 @@ export default {
   }
 
   &__detail-wrapper {
-    height: 47px;
+    min-height: 47px;
+    height: 47px; // set default height on page load
     overflow: hidden;
 
     @include lg {
-      height: 120px;
+      min-height: 120px;
+      height: 120px; // set default height on page load
     }
   }
 
