@@ -145,6 +145,7 @@ export default {
     height: 68px;
     margin-left: 8px;
     margin-top: -8px;
+    transform-origin: 0% 50%;
 
     @include lg {
       width: 166px;

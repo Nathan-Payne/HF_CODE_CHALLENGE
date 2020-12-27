@@ -16,10 +16,10 @@ export function pinnedLandingTimeline() {
     },
   })
   tl.set('.gsap-logo', {
-    transformOrigin: 'center left',
+    transformOrigin: '0% 50%',
   })
   tl.from('.gsap-logo', {
-    y: '82vh',
+    y: '80vh',
     scale: 2.8,
     duration: 3,
   })
