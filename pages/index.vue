@@ -131,7 +131,7 @@ export default {
   height: 100px;
   margin: 0 13px;
   background: $floral-white;
-  z-index: 20;
+  z-index: 10;
 
   @include lg {
     margin: 0px 40px 0px 40px;

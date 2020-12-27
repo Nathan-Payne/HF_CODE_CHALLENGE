@@ -43,6 +43,7 @@ export default {}
 <style lang="scss" scoped>
 .nav-content {
   display: none;
+  padding-left: 90px;
 }
 
 @include lg {

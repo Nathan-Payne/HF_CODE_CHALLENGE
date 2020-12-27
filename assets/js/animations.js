@@ -15,10 +15,12 @@ export function pinnedLandingTimeline() {
       // markers: true,
     },
   })
+  tl.set('.gsap-logo', {
+    transformOrigin: 'center left',
+  })
   tl.from('.gsap-logo', {
-    x: '9vw',
-    y: '76vh',
-    scale: 3,
+    y: '82vh',
+    scale: 2.8,
     duration: 3,
   })
   tl.from(

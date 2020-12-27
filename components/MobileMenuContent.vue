@@ -49,7 +49,6 @@ export default {
   position: fixed;
   top: 75px;
   left: -3px;
-  bottom: 0;
   right: 0px;
   z-index: 10;
   background-color: $floral-white;
@@ -57,6 +56,8 @@ export default {
   font-size: 25px;
   letter-spacing: -0.6px;
   line-height: 28px;
+  max-height: 100vh;
+  overflow-y: scroll;
 
   @include lg {
     display: none;
