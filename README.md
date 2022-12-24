@@ -1,5 +1,9 @@
 # hf_code_challenge
 
+## Info
+
+This project was completed as part of a technical interview assesing the ability to match a pixel perfect design and interaction documentation. No longer being developed.
+
 ## Build Setup
 
 ```bash
